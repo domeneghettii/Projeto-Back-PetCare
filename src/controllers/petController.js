@@ -19,34 +19,37 @@ const getPet = async (req, res) => {
   }
 };
 
-
 const createPet = async (req, res) => {
   try {
-    const { name, species, breed, age, tutor_id, notes, photo } = req.body;
-    const newPet = await petModel.createPet({ name, species, breed, age, tutor_id, notes, photo });
+    const { nome, especie, raca, idade, observacoes, foto, tutor_id } = req.body;
+    const newPet = await petModel.createPet(nome, especie, raca, idade, observacoes, foto, tutor_id);
     res.status(201).json(newPet);
   } catch (error) {
     res.status(500).json({ message: "Erro ao criar pet." });
   }
 };
-
 const updatePet = async (req, res) => {
-  try {
-    const { name, species, breed, age, tutor_id, notes, photo } = req.body;
-    const updatedPet = await petModel.updatePet(req.params.id, { name, species, breed, age, tutor_id, notes, photo });
-    if (!updatedPet) return res.status(404).json({ message: "Pet não encontrado para atualizar." });
-    res.json(updatedPet);
-  } catch (error) {
-    res.status(500).json({ message: "Erro ao atualizar pet." });
-  }
+    try {
+        const { id } = req.params;
+        const { nome, especie, raca, idade, observacoes, tutor_id } = req.body;
+
+        const petAtualizado = await petModel.updatePet(id, nome, especie, raca, idade, observacoes, tutor_id);
+
+        if (!petAtualizado) {
+            return res.status(404).json({ message: "Pet não encontrado." });
+        }
+
+        res.json(petAtualizado);
+    } catch (error) {
+        res.status(500).json({ message: "Erro ao atualizar pet." });
+    }
 };
 
 
 const deletePet = async (req, res) => {
   try {
-    const deletedPet = await petModel.deletePet(req.params.id);
-    if (!deletedPet) return res.status(404).json({ message: "Pet não encontrado para excluir." });
-    res.json({ message: "Pet excluído com sucesso.", pet: deletedPet });
+    await petModel.deletePet(req.params.id);
+    res.json({ message: "Pet excluído com sucesso." });
   } catch (error) {
     res.status(500).json({ message: "Erro ao excluir pet." });
   }

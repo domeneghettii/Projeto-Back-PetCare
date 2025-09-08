@@ -1,15 +1,13 @@
 const tutorModel = require("../models/tutorModel");
 
-
-const getAllTutors = async (req, res) => {
+const getAllTutores = async (req, res) => {
   try {
-    const tutors = await tutorModel.getTutors();
-    res.json(tutors);
+    const tutores = await tutorModel.getTutores();
+    res.json(tutores);
   } catch (error) {
     res.status(500).json({ message: "Erro ao buscar tutores." });
   }
 };
-
 
 const getTutor = async (req, res) => {
   try {
@@ -21,38 +19,34 @@ const getTutor = async (req, res) => {
   }
 };
 
-
 const createTutor = async (req, res) => {
   try {
-    const { name, phone } = req.body;
-    const newTutor = await tutorModel.createTutor({ name, phone });
+    const { nome, telefone } = req.body;
+    const newTutor = await tutorModel.createTutor(nome, telefone);
     res.status(201).json(newTutor);
   } catch (error) {
     res.status(500).json({ message: "Erro ao criar tutor." });
   }
 };
 
-
 const updateTutor = async (req, res) => {
   try {
-    const { name, phone } = req.body;
-    const updatedTutor = await tutorModel.updateTutor(req.params.id, { name, phone });
-    if (!updatedTutor) return res.status(404).json({ message: "Tutor não encontrado para atualizar." });
+    const { nome, telefone } = req.body;
+    const updatedTutor = await tutorModel.updateTutor(req.params.id, nome, telefone);
+    if (!updatedTutor) return res.status(404).json({ message: "Tutor não encontrado." });
     res.json(updatedTutor);
   } catch (error) {
     res.status(500).json({ message: "Erro ao atualizar tutor." });
   }
 };
 
-
 const deleteTutor = async (req, res) => {
   try {
-    const deletedTutor = await tutorModel.deleteTutor(req.params.id);
-    if (!deletedTutor) return res.status(404).json({ message: "Tutor não encontrado para excluir." });
-    res.json({ message: "Tutor excluído com sucesso.", tutor: deletedTutor });
+    await tutorModel.deleteTutor(req.params.id);
+    res.json({ message: "Tutor excluído com sucesso." });
   } catch (error) {
     res.status(500).json({ message: "Erro ao excluir tutor." });
   }
 };
 
-module.exports = { getAllTutors, getTutor, createTutor, updateTutor, deleteTutor };
+module.exports = { getAllTutores, getTutor, createTutor, updateTutor, deleteTutor };

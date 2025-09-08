@@ -2,67 +2,54 @@ CREATE DATABASE pet_care;
 
 \c pet_care;
 
-CREATE TABLE tutors (
+CREATE TABLE tutores (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    phone VARCHAR(20) NOT NULL
+    nome VARCHAR(100) NOT NULL,
+    telefone VARCHAR(20) NOT NULL
 );
+
 
 
 CREATE TABLE pets (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    species VARCHAR(50),
-    breed VARCHAR(50),
-    age INT,
-    tutor_id INTEGER REFERENCES tutors (id),
-    notes TEXT
+    nome VARCHAR(100) NOT NULL,
+    especie VARCHAR(50),
+    raca VARCHAR(50),
+    idade INT,
+    observacoes TEXT,
+    tutor_id INT REFERENCES tutores(id) ON DELETE CASCADE
 );
 
-INSERT INTO tutors (name, phone) VALUES
-('Luana Domeneghetti', '19993766815'),
-('Kevin Eziquiel Lima', '19993766815'),
-('Anna Beatriz Leme', '19872418344'),
-('Bruno Henrique Costa', '19995342178'),
-('Beatriz Lima', '19996726349'),
-('Carlos Eduardo Martins', '19985476931'),
-('Fernanda Souza', '19995123684'),
-('Marcos Vinícius Rocha', '19874569832'),
-('Juliana Pereira', '19994637890'),
-('Lucas Gabriel Nunes', '19993457821'),
-('Patrícia Alves', '19873568942'),
-('Rodrigo Santana', '19991234567'),
-('Amanda Cristina Lopes', '19994561234'),
-('Felipe Augusto Mendes', '19992233445'),
-('Sabrina Carvalho', '19876543210'),
-('Gabriel Fernandes', '19990011223'),
-('Camila Ribeiro', '19991122334'),
-('Ricardo Bastos', '19998877665'),
-('Natália Teixeira', '19879998877'),
-('Thiago Monteiro', '19993334455');
+INSERT INTO tutores (nome, telefone) VALUES
+('Maria Silva', '11988887777'),
+('João Souza', '11977776666'),
+('Ana Oliveira', '11966665555'),
+('Carlos Pereira', '11955554444'),
+('Fernanda Lima', '11944443333'),
+('Pedro Santos', '11933332222'),
+('Juliana Costa', '11922221111'),
+('Ricardo Almeida', '11911110000'),
+('Paula Ferreira', '11899998888'),
+('Bruno Rocha', '11888887777'),
+('Camila Mendes', '11877776666'),
+('Rodrigo Martins', '11866665555'),
+('Beatriz Ramos', '11855554444'),
+('Felipe Nogueira', '11844443333'),
+('Larissa Carvalho', '11833332222');
 
-
-
-INSERT INTO pets (name, species, breed, age, tutor_id, notes) VALUES
-('Thor', 'Cachorro', 'Pastor Alemão', 4, 1, 'Muito ativo, precisa de passeios diários'),
-('Luna', 'Gato', 'Siamês', 2, 2, 'Gosta de dormir em lugares altos'),
-('Mel', 'Cachorro', 'Shih Tzu', 5, 3, 'Muito dócil e tranquila'),
-('Fred', 'Cachorro', 'Labrador', 3, 4, 'Adora água e correr no parque'),
-('Nina', 'Gato', 'Persa', 1, 5, 'Tem medo de barulhos altos'),
-('Zazu', 'Ave', 'Calopsita', 2, 6, 'Assobia músicas e repete sons'),
-('Lelé', 'Roedor', 'Porquinho-da-Índia', 3, 7, 'Gosta de cenoura e contato humano'),
-('Spike', 'Cachorro', 'Bulldog', 6, 8, 'Calmo, mas ronca bastante'),
-('Lola', 'Gato', 'Maine Coon', 3, 9, 'Muito carinhosa e sociável'),
-('Rex', 'Cachorro', 'Doberman', 2, 10, 'Precisa de espaço e atividades físicas'),
-('Tico', 'Ave', 'Papagaio', 10, 11, 'Fala algumas palavras e canta'),
-('Bidu', 'Cachorro', 'Beagle', 4, 12, 'Farejador nato, gosta de cavar'),
-('Coquinho', 'Roedor', 'Hamster', 1, 13, 'Corre muito na rodinha'),
-('Simba', 'Gato', 'Bengal', 2, 14, 'Muito ativo e curioso'),
-('Pipoca', 'Cachorro', 'Dálmata', 5, 15, 'Gosta de correr e brincar com outros cães'),
-('Jade', 'Gato', 'Ragdoll', 1, 16, 'Muito calma, ideal para apartamento'),
-('Toby', 'Cachorro', 'Chihuahua', 6, 17, 'Late bastante, mas é protetor'),
-('Salem', 'Gato', 'Preto SRD', 4, 18, 'Misterioso e carismático'),
-('Fiona', 'Cachorro', 'Buldogue Francês', 3, 19, 'Teimosa, mas muito fofa'),
-('Nico', 'Réptil', 'Tartaruga Tigre-água', 7, 20, 'Precisa de sol e água limpa');
-
-
+INSERT INTO pets (nome, especie, raca, idade, observacoes, tutor_id) VALUES
+('Rex', 'Cachorro', 'Labrador', 5, 'Muito brincalhão', 1),
+('Mia', 'Gato', 'Siamês', 3, 'Gosta de dormir no sofá', 2),
+('Thor', 'Cachorro', 'Bulldog', 2, 'Alergia a frango', 3),
+('Luna', 'Gato', 'Persa', 4, 'Precisa de cuidados com os pelos', 4),
+('Bobby', 'Cachorro', 'Poodle', 6, 'Adora passear no parque', 5),
+('Mel', 'Gato', 'Vira-lata', 1, 'Muito curiosa e agitada', 6),
+('Zeus', 'Cachorro', 'Pastor Alemão', 7, 'Protetor da casa', 7),
+('Nina', 'Gato', 'Angorá', 2, 'Olhos azuis intensos', 8),
+('Spike', 'Cachorro', 'Pitbull', 4, 'Precisa de socialização', 9),
+('Amora', 'Gato', 'Maine Coon', 3, 'Muito dócil e calma', 10),
+('Max', 'Cachorro', 'Golden Retriever', 5, 'Adora água', 11),
+('Jade', 'Gato', 'Bengal', 2, 'Cheia de energia', 12),
+('Apolo', 'Cachorro', 'Beagle', 3, 'Farejador nato', 13),
+('Sushi', 'Gato', 'Oriental', 1, 'Muito esperto', 14),
+('Loki', 'Cachorro', 'Husky Siberiano', 4, 'Uiva bastante à noite', 15);

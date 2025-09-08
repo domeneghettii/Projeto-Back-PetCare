@@ -2,49 +2,45 @@ const pool = require("../config/database");
 
 const getPets = async () => {
   const result = await pool.query(
-    `SELECT pets.*, tutors.name AS tutor_name
+    `SELECT pets.*, tutores.nome AS tutor_nome, tutores.telefone AS tutor_telefone
      FROM pets
-     LEFT JOIN tutors ON pets.tutor_id = tutors.id`
+     LEFT JOIN tutores ON pets.tutor_id = tutores.id`
   );
   return result.rows;
 };
 
 const getPetById = async (id) => {
   const result = await pool.query(
-    `SELECT pets.*, tutors.name AS tutor_name
+    `SELECT pets.*, tutores.nome AS tutor_nome, tutores.telefone AS tutor_telefone
      FROM pets
-     LEFT JOIN tutors ON pets.tutor_id = tutors.id
+     LEFT JOIN tutores ON pets.tutor_id = tutores.id
      WHERE pets.id = $1`,
     [id]
   );
   return result.rows[0];
 };
 
-
-const createPet = async ({ name, species, breed, age, tutor_id, notes, photo }) => {
+const createPet = async (nome, especie, raca, idade, observacoes, foto, tutor_id) => {
   const result = await pool.query(
-    `INSERT INTO pets (name, species, breed, age, tutor_id, notes, photo)
-     VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *`,
-    [name, species, breed, age, tutor_id, notes, photo]
+    `INSERT INTO pets (nome, especie, raca, idade, observacoes, foto, tutor_id)
+     VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`,
+    [nome, especie, raca, idade, observacoes, foto, tutor_id]
   );
   return result.rows[0];
 };
-
-
-const updatePet = async (id, { name, species, breed, age, tutor_id, notes, photo }) => {
-  const result = await pool.query(
-    `UPDATE pets
-     SET name=$1, species=$2, breed=$3, age=$4, tutor_id=$5, notes=$6, photo=$7
-     WHERE id=$8 RETURNING *`,
-    [name, species, breed, age, tutor_id, notes, photo, id]
-  );
-  return result.rows[0];
+const updatePet = async (id, nome, especie, raca, idade, observacoes, tutor_id) => {
+    const result = await pool.query(
+        `UPDATE pets
+         SET nome=$1, especie=$2, raca=$3, idade=$4, observacoes=$5, tutor_id=$6
+         WHERE id=$7
+         RETURNING *`,
+        [nome, especie, raca, idade, observacoes, tutor_id, id]
+    );
+    return result.rows[0];
 };
-
 
 const deletePet = async (id) => {
-  const result = await pool.query("DELETE FROM pets WHERE id=$1 RETURNING *", [id]);
-  return result.rows[0];
+  await pool.query("DELETE FROM pets WHERE id = $1", [id]);
 };
 
 module.exports = { getPets, getPetById, createPet, updatePet, deletePet };
