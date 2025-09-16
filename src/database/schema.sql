@@ -8,8 +8,6 @@ CREATE TABLE tutores (
     telefone VARCHAR(20) NOT NULL
 );
 
-
-
 CREATE TABLE pets (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
