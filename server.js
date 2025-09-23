@@ -8,9 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Servir a pasta uploads para acesso às imagens
 app.use('/uploads', express.static('uploads'));
-
 app.use("/api/tutores", tutorRoutes);
 app.use("/api/pets", petRoutes);
 

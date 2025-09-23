@@ -1,7 +1,6 @@
 const multer = require("multer");
 const path = require("path");
 
-// Pasta onde as imagens serão salvas
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, "uploads/");
@@ -12,7 +11,7 @@ const storage = multer.diskStorage({
     },
 });
 
-// Configuração do multer com filtro de tipo de imagem
+
 const upload = multer({
     storage,
     fileFilter: (req, file, cb) => {

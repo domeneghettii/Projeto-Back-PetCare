@@ -15,6 +15,7 @@ CREATE TABLE pets (
     raca VARCHAR(50),
     idade INT,
     observacoes TEXT,
+    foto VARCHAR(255),
     tutor_id INT REFERENCES tutores(id) ON DELETE CASCADE
 );
 
@@ -35,12 +36,12 @@ INSERT INTO tutores (nome, telefone) VALUES
 ('Felipe Nogueira', '11844443333'),
 ('Larissa Carvalho', '11833332222');
 
-INSERT INTO pets (nome, especie, raca, idade, observacoes, tutor_id) VALUES
-('Rex', 'Cachorro', 'Labrador', 5, 'Muito brincalhão', 1),
-('Mia', 'Gato', 'Siamês', 3, 'Gosta de dormir no sofá', 2),
-('Thor', 'Cachorro', 'Bulldog', 2, 'Alergia a frango', 3),
-('Luna', 'Gato', 'Persa', 4, 'Precisa de cuidados com os pelos', 4),
-('Bobby', 'Cachorro', 'Poodle', 6, 'Adora passear no parque', 5),
+INSERT INTO pets (nome, especie, raca, idade, observacoes, tutor_id, foto) VALUES
+('Rex', 'Cachorro', 'Labrador', 5, 'Muito brincalhão', 1, '1758638125242-rexlabrador.jpg'),
+('Mia', 'Gato', 'Siamês', 3, 'Gosta de dormir no sofá', 2, '1758638644855-gatosiames.jpg'),
+('Thor', 'Cachorro', 'Bulldog', 2, 'Alergia a frango', 3, '1758638739221-bulldog.jpg'),
+('Luna', 'Gato', 'Persa', 4, 'Precisa de cuidados com os pelos', 4, '1758638850702-GatoPersa.jpg'),
+('Bobby', 'Cachorro', 'Poodle', 6, 'Adora passear no parque', 5, '1758638938299-Poodle.jpg'),
 ('Mel', 'Gato', 'Vira-lata', 1, 'Muito curiosa e agitada', 6),
 ('Zeus', 'Cachorro', 'Pastor Alemão', 7, 'Protetor da casa', 7),
 ('Nina', 'Gato', 'Angorá', 2, 'Olhos azuis intensos', 8),
