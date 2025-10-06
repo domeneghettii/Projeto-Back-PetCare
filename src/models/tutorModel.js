@@ -1,3 +1,4 @@
+// Modelo de tutores
 const pool = require("../config/database");
 
 const getTutores = async () => {
