@@ -8,7 +8,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Rotas
 app.use("/api/tutores", tutorRoutes);
 app.use("/api/pets", petRoutes);
 
