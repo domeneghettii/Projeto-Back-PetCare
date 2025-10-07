@@ -38,18 +38,18 @@ INSERT INTO tutores (nome, telefone) VALUES
 
 
 INSERT INTO pets (nome, especie, raca, idade, observacoes, tutor_id, foto) VALUES
-('Rex', 'Cachorro', 'Labrador', 5, 'Muito brincalhão', 1, '1758638125242-rexlabrador.jpg'),
-('Mia', 'Gato', 'Siamês', 3, 'Gosta de dormir no sofá', 2, '1758638644855-gatosiames.jpg'),
-('Thor', 'Cachorro', 'Bulldog', 2, 'Alergia a frango', 3, '1758638739221-bulldog.jpg'),
-('Luna', 'Gato', 'Persa', 4, 'Precisa de cuidados com os pelos', 4, '1758638850702-GatoPersa.jpg'),
-('Bobby', 'Cachorro', 'Poodle', 6, 'Adora passear no parque', 5, '1758638938299-Poodle.jpg'),
-('Mel', 'Gato', 'Vira-lata', 1, 'Muito curiosa e agitada', 6, '1759778947704-gatoviralata.jpg'),
-('Zeus', 'Cachorro', 'Pastor Alemão', 7, 'Protetor da casa', 7, '1759779070022-pastoralemao.jpg'),
-('Nina', 'Gato', 'Angorá', 2, 'Olhos azuis intensos', 8, '1759779176095-angora.jpg'),
-('Spike', 'Cachorro', 'Pitbull', 4, 'Precisa de socialização', 9, '1759779264018-pitbull.jpg'),
-('Amora', 'Gato', 'Maine Coon', 3, 'Muito dócil e calma', 10, '1759779427297-gatomaine.jpg'),
-('Max', 'Cachorro', 'Golden Retriever', 5, 'Adora água', 11, '1759779875032-goldenretriever.jpg'),
-('Jade', 'Gato', 'Bengal', 2, 'Cheia de energia', 12, '1759780004185-gatobengal.jpg'),
-('Apolo', 'Cachorro', 'Beagle', 3, 'Farejador nato', 13, '1759780124954-cachorrobeagle.jpg'),
-('Sushi', 'Gato', 'Oriental', 1, 'Muito esperto', 14, '1759780222374-gatooriental.jpg'),
-('Loki', 'Cachorro', 'Husky Siberiano', 4, 'Uiva bastante à noite', 15, '1759780353258-husky.jpg');
+('Rex', 'Cachorro', 'Labrador', 5, 'Muito brincalhão', 1, 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/YellowLabradorLooking_new.jpg/640px-YellowLabradorLooking_new.jpg'),
+('Mia', 'Gato', 'Siamês', 3, 'Gosta de dormir no sofá', 2, 'https://www.whiskas.com.br/sites/g/files/fnmzdf2156/files/2024-10/gato-siames.jpg'),
+('Thor', 'Cachorro', 'Bulldog', 2, 'Alergia a frango', 3, 'https://media-eu.husse.com/media/72/51/36/1607076929/iStock-1018276002.jpg'),
+('Luna', 'Gato', 'Persa', 4, 'Precisa de cuidados com os pelos', 4, 'https://www.correiobraziliense.com.br/aqui/wp-content/uploads/2025/06/gato_persa.jpg'),
+('Bobby', 'Cachorro', 'Poodle', 6, 'Adora passear no parque', 5, 'https://t3.ftcdn.net/jpg/02/79/79/46/360_F_279794635_jbbSHLlc5GvQNdw5oqpxhxxyek3jUo64.jpg'),
+('Mel', 'Gato', 'Vira-lata', 1, 'Muito curiosa e agitada', 6, 'https://www.petlove.com.br/images/breeds/202905/profile/original/vira-lata-p.jpg?1547494074'),
+('Zeus', 'Cachorro', 'Pastor Alemão', 7, 'Protetor da casa', 7, 'https://vetex.vet.br/blog/wp-content/uploads/2021/07/Pastor-alemao-tudo-sobre-a-raca-do-cao-policial-930x620.png'),
+('Nina', 'Gato', 'Angorá', 2, 'Olhos azuis intensos', 8, 'https://cobasi.vteximg.com.br/arquivos/ids/278731/angor%C3%A1_.png?v=637052081114200000'),
+('Spike', 'Cachorro', 'Pitbull', 4, 'Precisa de socialização', 9, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSaXEGvnncbp7Ja15_JRGz_xKjGlI0MGTLUKAVMxbqHoJEjdcRKK2Hi6344Fs9-4wIDAw&usqp=CAU'),
+('Amora', 'Gato', 'Maine Coon', 3, 'Muito dócil e calma', 10, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgZrM79_oNFjaRh2WhO4iRXpKcJoOH0IzDAw&s'),
+('Max', 'Cachorro', 'Golden Retriever', 5, 'Adora água', 11, 'https://www.dogvibe.com.br/wp-content/uploads/2023/06/guia_racas_golden_retriever_dogvibe.jpg'),
+('Jade', 'Gato', 'Bengal', 2, 'Cheia de energia', 12, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpfDAWPG7TgrGQZt5kKQpQ_cD18ILaF4XXiQ&s'),
+('Apolo', 'Cachorro', 'Beagle', 3, 'Farejador nato', 13, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAZrTtw4zIH3M36-sd7h2d6dqESSdnEhBuUg&s'),
+('Sushi', 'Gato', 'Oriental', 1, 'Muito esperto', 14, 'https://tica.org/wp-content/uploads/2018/08/Oriental-Shorthair-Full-Body.jpg'),
+('Loki', 'Cachorro', 'Husky Siberiano', 4, 'Uiva bastante à noite', 15, 'https://blog.polipet.com.br/wp-content/uploads/2022/08/AdobeStock_100800827-445x445.jpeg');
