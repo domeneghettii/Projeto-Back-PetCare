@@ -43,7 +43,7 @@ INSERT INTO pets (nome, especie, raca, idade, observacoes, tutor_id, foto) VALUE
 ('Thor', 'Cachorro', 'Bulldog', 2, 'Alergia a frango', 3, 'https://media-eu.husse.com/media/72/51/36/1607076929/iStock-1018276002.jpg'),
 ('Luna', 'Gato', 'Persa', 4, 'Precisa de cuidados com os pelos', 4, 'https://www.correiobraziliense.com.br/aqui/wp-content/uploads/2025/06/gato_persa.jpg'),
 ('Bobby', 'Cachorro', 'Poodle', 6, 'Adora passear no parque', 5, 'https://t3.ftcdn.net/jpg/02/79/79/46/360_F_279794635_jbbSHLlc5GvQNdw5oqpxhxxyek3jUo64.jpg'),
-('Mel', 'Gato', 'Vira-lata', 1, 'Muito curiosa e agitada', 6, 'https://www.petlove.com.br/images/breeds/202905/profile/original/vira-lata-p.jpg?1547494074'),
+('Mel', 'Gato', 'Vira-lata', 1, 'Muito curiosa e agitada', 6, 'https://www.patasdacasa.com.br/sites/default/files/styles/article_detail_desktop/public/inline-images/quais-tipos-gatos-vira-lata-mais-populares-brasil3.jpg.webp?itok=QFcjMXLS'),
 ('Zeus', 'Cachorro', 'Pastor Alemão', 7, 'Protetor da casa', 7, 'https://vetex.vet.br/blog/wp-content/uploads/2021/07/Pastor-alemao-tudo-sobre-a-raca-do-cao-policial-930x620.png'),
 ('Nina', 'Gato', 'Angorá', 2, 'Olhos azuis intensos', 8, 'https://cobasi.vteximg.com.br/arquivos/ids/278731/angor%C3%A1_.png?v=637052081114200000'),
 ('Spike', 'Cachorro', 'Pitbull', 4, 'Precisa de socialização', 9, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSaXEGvnncbp7Ja15_JRGz_xKjGlI0MGTLUKAVMxbqHoJEjdcRKK2Hi6344Fs9-4wIDAw&usqp=CAU'),
